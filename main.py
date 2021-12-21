@@ -24,7 +24,8 @@ def preprocess():
                 start = True
 
             if(file == TO):
-                print('finished processing files ----------------------------------------')
+                print(
+                    'finished processing files ----------------------------------------')
                 return
 
             print('CURRENT FILE : ', file)
@@ -38,7 +39,8 @@ def preprocess():
                 personId = splits[1]
                 videoId = splits[2]
 
-                print('signId', signId, 'personId', personId, 'videoId', videoId)
+                print('signId', signId, 'personId',
+                      personId, 'videoId', videoId)
                 print('-----------------------------------------------')
 
                 intSignId = int(signId)
@@ -55,7 +57,11 @@ def preprocess():
 
                 videoWritePath = videoWritePath + "/" + file
 
-                preprocessVideo(originalVideoPath, videoWritePath)
+                if os.path.exists(videoWritePath):
+                    print('file exists in the location')
+
+                else:
+                    preprocessVideo(originalVideoPath, videoWritePath)
 
             # intPersonId = int(personId)
             # directory = directory + "/" + str(intPersonId)

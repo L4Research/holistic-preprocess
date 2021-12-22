@@ -3,13 +3,13 @@ import os
 from prepare_single import preprocessVideo
 
 BASE_PATH = '/content'
-DATA_PATH = '/data'
+DATA_PATH = '/content/drive/MyDrive/Final_fyp_trims/data'
 PREPROCESS_DATA_PATH = '/content/data-holistic/videos'
-TRAIN_DATA_PATH = '/content/data-holistic/videos'+'/bg_train_data'
-TEST_DATA_PATH = '/content/data-holistic/videos/bg_test_data'
+TRAIN_DATA_PATH = '/content/drive/MyDrive/data-holistic/videos/bg_train_data'
+TEST_DATA_PATH = '/content/drive/MyDrive/data-holistic/videos/bg_test_data'
 
-FROM = '001_001_001.txt'
-TO = '003_010_005.txt'
+FROM = '002_003_001.mp4'
+TO = '005_009_001.mp5'
 
 
 def preprocess():
@@ -18,7 +18,7 @@ def preprocess():
         files.sort()
         for file in files:
 
-            originalVideoPath = DATA_PATH + file
+            originalVideoPath = DATA_PATH + "/" + file
 
             if file == FROM:
                 start = True
@@ -69,3 +69,4 @@ def preprocess():
             #   os.makedirs(directory)
 
             # videoPath = BASE_PATH + DATA_PATH + '/' + file
+preprocess()
